@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
@@ -17,3 +17,15 @@ def test_request():
 @app.route('/exercise_request/<box>')
 def exercise_request(box):
     return f'Hello, {box} .'
+
+@app.route('/show_html')
+def show_html():
+    return render_template('test_html.html')
+
+@app.route('/exercise_html')
+def exercise_html():
+    return render_template('exercise.html')
+
+@app.route('/exercise')
+def excersize():
+    return f'{request.args.get("my_name")}さん、ようこそ'
