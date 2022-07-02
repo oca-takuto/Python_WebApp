@@ -1,4 +1,5 @@
 color = "";
+
 function change_table(){
     if(color == "red"){
         color = "blue";
