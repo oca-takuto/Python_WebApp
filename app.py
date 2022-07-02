@@ -70,3 +70,11 @@ def human_result():
     weight = request.args.get("weight")
     humans = db.session.query(Human).filter(Human.height >= height, Human.weight >= weight)
     return render_template("./human_result.html", humans=humans, height=height, weight=weight)
+
+@app.route('/try_html')
+def try_html():
+    return render_template("./try_html.html")
+
+@app.route('/show_data', methods=["GET","POST"])
+def show_data():
+    return f'{request.form.get("text_input")}'
