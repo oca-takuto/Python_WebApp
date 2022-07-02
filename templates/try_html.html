@@ -3,7 +3,9 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="{{url_for('static', filename='try_css.css')}}">
-    <script src={{url_for("static",filename="try_js.js")}}></script>
+    <script src={{ url_for("static", filename="try_js.js") }}></script>
+    <script src={{ url_for("static", filename="plotly-2.12.1.min.js") }}></script>
+
 </head>
 <body>
     <form method="POST" action="http://127.0.0.1:5000/show_data">
@@ -31,6 +33,17 @@
             <td>内容3</td>
         </tr>
     </table>
-        
+    <div id="try_graph" style="width:600px;height:250px;margin: auto;"></div>
+    <script>
+        var trace = {
+            x: [1, 2, 3, 4],
+            y: [10, 15, 13, 17],
+            mode: 'markers',
+            type: 'scatter'
+        };
+        var data = [trace];
+        Plotly.newPlot('try_graph', data);
+    </script>
+    
 </body>
 </html>
