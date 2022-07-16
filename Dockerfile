@@ -8,5 +8,3 @@ COPY templates templates
 COPY app.py app.py
 COPY mysql_model.py mysql_model.py
 CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
-
-#CMD ["echo","'test'"]
